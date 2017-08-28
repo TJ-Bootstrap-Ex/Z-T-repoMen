@@ -19,6 +19,9 @@
 
 #operator {
     float: left ;
+    width: 45px;
+    height:33px;
+    background-color: #fff;
 }
 
 #op {
@@ -26,11 +29,16 @@
 }
 
 #left-operand {
+
+    height:33px;
+    background-color: #fff;
     float: left;
     margin-left: 25px;
 }
 
 #right-operand {
+    height:33px;
+    background-color: #fff;
     float: left;
 }
 
