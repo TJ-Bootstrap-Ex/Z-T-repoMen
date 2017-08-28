@@ -41,11 +41,6 @@ window.onload = function () {
         lastScreen;
 
 
-    screen = document.getElementById("left-operand");
-    midScreen = document.getElementById("operator");
-    lastScreen = document.getElementById("result");
-
-
     var elem = document.querySelectorAll(".numb");
     var op = document.querySelectorAll(".oper");
     var elemTwo = document.querySelectorAll(".num");
@@ -53,12 +48,13 @@ window.onload = function () {
     var oplen = op.length;
     var len = elem.length;
 
+    screen = document.getElementById("left-operand");
+    midScreen = document.getElementById("operator");
+    lastScreen = document.getElementById("result");
 
+    for (var i = 0; i < len; i++) {
 
-
-    for(var i = 0; i < len; i++ ) {
-
-        elem[i].addEventListener("click",function() {
+        elem[i].addEventListener("click", function () {
 
             num = this.value;
 
@@ -66,104 +62,75 @@ window.onload = function () {
 
             // limit = output.length;
 
-            if(limit > 16 ) {
+            if (limit > 16) {
 
                 alert("Sorry no more input is allowed");
 
             }
 
-        },false);
+        }, false);
 
     }
 
-var lastField = function () {for(var i = 0; i < len; i++ ) {
+    for (var i = 0; i < len; i++) {
 
-    elemtwo[i].addEventListener("click",function() {
-
-        num = this.value;
-
-        output = lastScreen.innerHTML += num;
-
-        // limit = output.length;
-
-        if(limit > 16 ) {
-
-            alert("Sorry no more input is allowed");
-
-        }
-
-    },false);
-
-}};
-
-
-
-
-
-
-    for(var i = 0; i < len; i++ ) {
-
-        op[i].addEventListener("click",function() {
+        op[i].addEventListener("click", function () {
 
             num = this.value;
 
             output = midScreen.innerHTML += num;
 
-            // limit = output.length;
+            limit = output.length;
 
-            if(limit > 16 ) {
+            if (limit > 16) {
 
                 alert("Sorry no more input is allowed");
 
             }
 
-        },false);
+        }, false);
 
     }
 
-    if (numbers &&){
-
-    }
-
-    document.querySelector(".zero").addEventListener("click",function() {
+    document.querySelector(".zero").addEventListener("click", function () {
 
         zero = this.value;
 
-        if(screen.innerHTML === "") {
+        if (screen.innerHTML === "") {
 
             output = screen.innerHTML = zero;
         }
 
-        else if(screen.innerHTML === output) {
+        else if (screen.innerHTML === output) {
 
-            output = screen.innerHTML +=zero;
+            output = screen.innerHTML += zero;
 
         }
 
-    },false);
+    }, false);
 
-    document.querySelector(".period").addEventListener("click",function() {
+    document.querySelector(".period").addEventListener("click", function () {
 
         period = this.value;
 
-        if(screen.innerHTML === "") {
+        if (screen.innerHTML === "") {
 
             output = screen.innerHTML = screen.innerHTML.concat("0.");
 
         }
 
-        else if(screen.innerHTML === output) {
+        else if (screen.innerHTML === output) {
 
             screen.innerHTML = screen.innerHTML.concat(".");
 
         }
 
-    },false);
+    }, false);
 
 
-    document.querySelector("#eqn-bg").addEventListener("click",function() {
+    document.querySelector("#eqn-bg").addEventListener("click", function () {
 
-        if(screen.innerHTML === output) {
+        if (screen.innerHTML === output) {
 
             screen.innerHTML = eval(output);
         }
@@ -172,38 +139,38 @@ var lastField = function () {for(var i = 0; i < len; i++ ) {
             screen.innerHTML = "";
         }
 
-    },false);
+    }, false);
 
-    document.querySelector("#clear").addEventListener("click",function() {
+    document.querySelector("#clear").addEventListener("click", function () {
 
         screen.innerHTML = "";
 
-    },false);
+    }, false);
 
 
     var elem1 = document.querySelectorAll(".operator");
 
     var len1 = elem1.length;
 
-    for(var i = 0; i < len1; i++ ) {
+    for (var i = 0; i < len1; i++) {
 
-        elem1[i].addEventListener("click",function() {
+        elem1[i].addEventListener("click", function () {
 
             operator = this.value;
 
-            if(screen.innerHTML === "") {
+            if (screen.innerHTML === "") {
 
                 screen.innerHTML = screen.innerHTML.concat("");
 
             }
 
-            else if(output) {
+            else if (output) {
 
                 screen.innerHTML = output.concat(operator);
 
             }
 
-        },false);
+        }, false);
 
     }
 }
