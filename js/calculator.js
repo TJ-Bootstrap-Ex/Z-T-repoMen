@@ -148,13 +148,17 @@ window.onload = function () {
 
     document.querySelector("#eqn-bg").addEventListener("click", function () {
 
-        if (screen.innerHTML === output) {
+       output = screen.innerHTML + midScreen.innerHTML + lastScreen.innerHTML;
 
-            screen.innerHTML = eval(output);
+        if (output) {
+
+            lastScreen.innerHTML = eval(output);
+            screen.innerHTML = "";
+            midScreen.innerHTML = "";
         }
 
         else {
-            screen.innerHTML = "";
+            lastScreen.innerHTML = "";
         }
 
     }, false);
@@ -162,6 +166,8 @@ window.onload = function () {
     document.querySelector("#clear").addEventListener("click", function () {
 
         screen.innerHTML = "";
+        midScreen.innerHTML = "";
+        lastScreen.innerHTML = "";
 
     }, false);
 
