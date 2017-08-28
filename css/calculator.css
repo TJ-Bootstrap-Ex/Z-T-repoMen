@@ -1,0 +1,26 @@
+#container {
+    height: 400px;
+    width: 300px;
+    background-color: #000;
+
+
+}
+
+.operand {
+    background-color: #ffffff;
+    width: 75px;
+    margin-right:10px;
+}
+
+#operator {
+    float: left ;
+}
+
+#left-operand {
+    float: left;
+    margin-left: 32px;
+}
+
+#right-operand {
+    float: left;
+}
