@@ -21,6 +21,8 @@ window.onload = function () {
     var len = elem.length;
 
 
+    // increments through array of numbers. displays output to first or last screen depending on if operator is used//
+
     for (var i = 0; i < len; i++) {
 
         elem[i].addEventListener("click", function () {
@@ -39,6 +41,8 @@ window.onload = function () {
 
     }
 
+    //executes similar to the last function but for the operators//
+
     for (var i = 0; i < oplen; i++) {
 
         op[i].addEventListener("click", function () {
@@ -46,9 +50,6 @@ window.onload = function () {
             num = this.value;
 
             output = midScreen.innerHTML = num;
-
-            // limit = output.length;
-
 
         }, false);
 
